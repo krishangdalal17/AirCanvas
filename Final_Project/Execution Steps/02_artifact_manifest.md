@@ -2,13 +2,14 @@
 
 | Artifact | Stage | Tool | Upload/open when | Status |
 |---|---|---|---|---|
-| `Lab Camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.xpr` | Hardware/IP | Vivado 2023.1 | Rebuild or inspect camera design | Present |
-| `Lab Camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/system.bd` | Hardware/IP | Vivado 2023.1 | Inspect or modify block design | Present |
-| `pcam_hdmi/_ide/bitstream/system_wrapper.bit` | Hardware execution | Vivado Hardware Manager | Program PL for baseline | In 2023.1 software archive |
-| `hw_pcam/export/hw_pcam/hw/system_wrapper.xsa` | Hardware-to-software handoff | Vivado/Vitis 2023.1 | Create or refresh software platform | In 2023.1 software archive |
-| `pcam_hdmi/src/main.cc` | Software | Vitis 2023.1 | Build camera application | In 2023.1 software archive |
-| `pcam_hdmi/Debug/pcam_hdmi.elf` | Software execution | Vitis/JTAG | Download to PS | In 2023.1 software archive |
+| `hw/hw.xpr` | Hardware/IP | Vivado 2021.1 | Rebuild or inspect camera design | Present |
+| `hw/hw.srcs/sources_1/bd/system/system.bd` | Hardware/IP | Vivado 2021.1 | Inspect or modify block design | Present |
+| `Final_Project/pcam_hdmi/_ide/bitstream/system_wrapper.bit` | Hardware execution | Vivado Hardware Manager | Program PL for baseline | Present |
+| `Final_Project/hw_pcam/hw/system_wrapper.xsa` | Hardware-to-software handoff | Vivado/Vitis 2021.1 | Create or refresh software platform | Present |
+| `Final_Project/pcam_hdmi/src/main.cc` | Software | Vitis 2021.1 | Build camera application | Present |
+| `Final_Project/pcam_hdmi/Debug/pcam_hdmi.elf` | Software execution | Vitis/JTAG | Download to PS | Present |
 | `Final Project/Project Collateral/aircanvas/vivado/rtl/*.sv` | Final hardware/IP | Vivado | Add after camera baseline passes | Present; not yet integrated |
+| `Final Project/Project Collateral/aircanvas/vivado/rtl/aircanvas_vision.sv` | First AirCanvas vision block | Vivado 2021.1 | Package/add to the validated camera project | Present; standalone, not yet integrated |
 | `Final Project/Project Collateral/aircanvas/vitis/src/*.c` | Final software | Vitis | Add after XSA/IP interface is stable | Present; not yet integrated |
 
 ## Naming rule

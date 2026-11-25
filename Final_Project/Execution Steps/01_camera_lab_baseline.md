@@ -6,30 +6,30 @@ Run the supplied Pcam 5C camera-to-HDMI design unchanged on the Zybo Z7. This es
 
 ## Required tool version
 
-Use **Vivado 2023.1** for hardware/IP generation and **Vitis 2023.1** for software generation and execution.
+Use **Vivado 2021.1** for hardware/IP generation and **Vitis 2021.1** for software generation and execution.
 
 ## Files to use
 
 | Purpose | File/folder |
 |---|---|
-| Vivado 2023.1 project | `Lab Camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.xpr` |
-| Block design | `Lab Camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/system.bd` |
-| Existing bitstream | Extracted 2023.1 software archive: `pcam_hdmi/_ide/bitstream/system_wrapper.bit` |
-| Existing exported platform | Extracted 2023.1 software archive: `hw_pcam/export/hw_pcam/hw/system_wrapper.xsa` |
+| Vivado 2021.1 project | `hw/hw.xpr` |
+| Block design | `hw/hw.srcs/sources_1/bd/system/system.bd` |
+| Existing bitstream | `Final_Project/pcam_hdmi/_ide/bitstream/system_wrapper.bit` |
+| Existing exported platform | `Final_Project/hw_pcam/hw/system_wrapper.xsa` |
 | Camera application project | Extracted `Zybo-Z7-10-Pcam-5C-sw.ide.zip`, `pcam_hdmi/` |
-| Existing application ELF | Extracted 2023.1 software archive: `pcam_hdmi/Debug/pcam_hdmi.elf` |
+| Existing application ELF | `Final_Project/pcam_hdmi/Debug/pcam_hdmi.elf` |
 
 ## Hardware/IP generation — Vivado
 
-1. Extract the hardware and software archives under `Lab Camera/2023.1/`.
-2. Open `Lab Camera/2023.1/Zybo-Z7-10-Pcam-5C-hw.xpr/hw/hw.xpr` in Vivado 2023.1.
-2. Open the `system` block design and run **Validate Design**.
-3. Resolve any version or IP-repository warnings before continuing.
-4. Run **Generate Output Products**.
-5. Run **Synthesis**, **Implementation**, and **Generate Bitstream**.
-6. Export the hardware platform as `system_wrapper.xsa` with the bitstream included.
-7. Review timing reports. The archived 2023.1 implementation completed bitstream generation but reported timing violations.
-8. Record the Vivado version, validation result, timing result, and utilization report in `execution_log.md`.
+1. Use the checked-in hardware and software projects under `hw/` and `Final_Project/`.
+2. Open `hw/hw.xpr` in Vivado 2021.1.
+3. Open the `system` block design and run **Validate Design**.
+4. Resolve any version or IP-repository warnings before continuing.
+5. Run **Generate Output Products**.
+6. Run **Synthesis**, **Implementation**, and **Generate Bitstream**.
+7. Export the hardware platform as `system_wrapper.xsa` with the bitstream included.
+8. Review timing reports. The archived 2021.1 implementation completed bitstream generation but reported timing violations.
+9. Record the Vivado version, validation result, timing result, and utilization report in `execution_log.md`.
 
 ## Software generation — Vitis/SDK
 
