@@ -10,6 +10,8 @@ The first custom block will be inserted between the existing Gamma Correction IP
 Pcam/MIPI -> BayerToRGB -> GammaCorrection -> AirCanvas Vision -> AXI VDMA S2MM
 ```
 
+In the existing camera design, the video stream uses the 150 MHz clock and the AXI-Lite control path uses the 50 MHz clock. The AirCanvas block therefore requires clock-domain synchronization for configuration, status, and the clear command.
+
 The block must preserve the video stream. For every accepted input transaction, it must produce one corresponding output transaction with the same frame/line markers.
 
 ## Stream contract
