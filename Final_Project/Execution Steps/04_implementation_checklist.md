@@ -26,7 +26,7 @@ Evidence: register map and stream assumptions in the execution log.
 
 ## Phase 2 — First hardware vision block
 
-- [ ] Add the custom RTL source to the existing Vivado 2021.1 project.
+- [x] Add the custom RTL source to the existing Vivado 2021.1 project.
 - [ ] Connect the block into the existing video stream without removing the camera, VDMA, DDR, or HDMI path.
 - [ ] Add AXI-Lite access or the course-approved interface for candidate status and X/Y coordinates.
 - [ ] Add reset handling and switch-controlled clear behavior.

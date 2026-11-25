@@ -37,5 +37,6 @@
 - Added standalone RTL source `aircanvas_vision.sv`; it has not yet been added to the Vivado block design.
 - Standalone RTL synthesis completed successfully in Vivado 2021.1 with zero errors. The isolated check produced expected constraint warnings because the camera XDC targets the full system rather than the standalone vision module.
 - Confirmed the existing block design uses a 150 MHz video clock and a 50 MHz AXI-Lite clock; the RTL was updated to synchronize configuration/status across those domains before integration.
+- Hardware-side confirmation received: the updated standalone RTL synthesis completed successfully on the running machine.
 - No Vitis source changes have been made yet.
 
