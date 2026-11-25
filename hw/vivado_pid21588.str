@@ -1,0 +1,248 @@
+/*
+
+Xilinx Vivado v2021.1 (64-bit) [Major: 2021, Minor: 1]
+SW Build: 3247384 on Thu Jun 10 19:36:33 MDT 2021
+IP Build: 3246043 on Fri Jun 11 00:30:35 MDT 2021
+
+Process ID (PID): 21588
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Tue Nov 24 17:34:58 PST 2026
+Time zone: 	Pacific Standard Time (America/Los_Angeles)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+Scale size: 19
+
+Java version: 	11.0.2 64-bit
+Java home: 	C:/Xilinx/Vivado/2021.1/tps/win64/jre11.0.2
+Java executable: 	C:/Xilinx/Vivado/2021.1/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	krish
+User home directory: C:/Users/krish
+User working directory: C:/Users/krish/Desktop/Lab_Camera/hw
+User country: 	IN
+User language: 	en
+User locale: 	en_IN
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2021.1
+RDI_DATADIR: C:/Xilinx/Vivado/2021.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2021.1/bin
+
+Vivado preferences file: C:/Users/krish/AppData/Roaming/Xilinx/Vivado/2021.1/vivado.xml
+Vivado preferences directory: C:/Users/krish/AppData/Roaming/Xilinx/Vivado/2021.1/
+Vivado layouts directory: C:/Users/krish/AppData/Roaming/Xilinx/Vivado/2021.1/data/layouts
+PlanAhead jar file: 	C:/Xilinx/Vivado/2021.1/lib/classes/planAhead.jar
+Vivado log file: 	C:/Users/krish/Desktop/Lab_Camera/hw/vivado.log
+Vivado journal file: 	C:/Users/krish/Desktop/Lab_Camera/hw/vivado.jou
+Engine tmp dir: 	C:/Users/krish/Desktop/Lab_Camera/hw/.Xil/Vivado-21588-DESKTOP-4ST7OLM
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2021.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2021.1/ids_lite/ISE
+XILINX_HLS: C:/Xilinx/Vitis_HLS/2021.1
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2021.1
+XILINX_SDK: C:/Xilinx/Vitis/2021.1
+XILINX_VITIS: C:/Xilinx/Vitis/2021.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2021.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2021.1
+
+
+GUI allocated memory:	308 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,291 MB
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 81 MB (+81934kb) [00:00:07]
+// [Engine Memory]: 1,291 MB (+1202485kb) [00:00:07]
+// bz (cs):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\krish\Desktop\Lab_Camera\hw\hw.xpr. Version: Vivado v2021.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project C:/Users/krish/Desktop/Lab_Camera/hw/hw.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,291 MB. GUI used memory: 60 MB. Current time: 11/24/26, 5:34:59 PM PST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 90 MB (+5297kb) [00:00:19]
+// [GUI Memory]: 104 MB (+9956kb) [00:00:19]
+// [GUI Memory]: 113 MB (+4788kb) [00:00:24]
+// WARNING: HEventQueue.dispatchEvent() is taking  8271 ms.
+// Tcl Message: open_project C:/Users/krish/Desktop/Lab_Camera/hw/hw.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/krish/Desktop/Krishang/College/Master's/Sem 3/EE277 Embedded System Design/Labs/Lab Camera/hw' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'. 
+// [GUI Memory]: 122 MB (+2601kb) [00:00:26]
+// WARNING: HEventQueue.dispatchEvent() is taking  2563 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1940 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:37 ; elapsed = 00:00:19 . Memory (MB): peak = 1283.984 ; gain = 0.000 
+// [GUI Memory]: 146 MB (+19106kb) [00:00:31]
+// Project name: hw; location: C:/Users/krish/Desktop/Lab_Camera/hw; part: xc7z010clg400-1
+dismissDialog("Open Project"); // bz
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // o
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// cD (cs): Launch Runs: addNotify
+// [GUI Memory]: 164 MB (+11297kb) [00:00:39]
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// 'cA' command handler elapsed time: 4 seconds
+dismissDialog("Launch Runs"); // cD
+// bz (cs):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [GUI Memory]: 177 MB (+5227kb) [00:00:46]
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Nov 24 17:35:41 2026] Launched impl_1... Run output will be captured here: C:/Users/krish/Desktop/Lab_Camera/hw/hw.runs/impl_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1283.984 ; gain = 0.000 
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,291 MB. GUI used memory: 110 MB. Current time: 11/24/26, 5:35:59 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,291 MB. GUI used memory: 110 MB. Current time: 11/24/26, 5:36:29 PM PST
+// Elapsed time: 84 seconds
+dismissDialog("Generate Bitstream"); // bz
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ag (cs): Bitstream Generation Completed: addNotify
+// Elapsed time: 23 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Bitstream Generation Completed"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ak
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ak
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ak
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ak
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ak
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // an
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // af
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl Command: 'get_property pfm_name [get_files -all {C:/Users/krish/Desktop/Lab_Camera/hw/hw.srcs/sources_1/bd/system/system.bd}]'
+// Tcl Command: 'get_property pfm_name [get_files -all {C:/Users/krish/Desktop/Lab_Camera/hw/hw.srcs/sources_1/bd/system/system.bd}]'
+// g (cs): Export Hardware Platform: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectRadioButton(PAResourceEtoH.ExportPlatformWizard_FIXED_POST_IMPL, "Include bitstream. This platform includes the complete hardware implementation and bitstream, in addition to the hardware specification for software tools."); // b
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton("OptionPane.button", "Yes"); // JButton
+// Tcl Command: 'get_property pfm_name [get_files -all {C:/Users/krish/Desktop/Lab_Camera/hw/hw.srcs/sources_1/bd/system/system.bd}]'
+selectButton("FINISH", "Finish"); // JButton
+// 'n' command handler elapsed time: 11 seconds
+dismissDialog("Export Hardware Platform"); // g
+// Tcl Message: write_hw_platform -fixed -include_bit -force -file C:/Users/krish/Desktop/Lab_Camera/hw/system_wrapper.xsa 
+// Tcl Message: INFO: [Vivado 12-4895] Creating Hardware Platform: C:/Users/krish/Desktop/Lab_Camera/hw/system_wrapper.xsa ... 
+// bz (cs):  Export Hardware Platform : addNotify
+// Tcl Message: INFO: [Hsi 55-2053] elapsed time for repository (C:/Xilinx/Vivado/2021.1/data/embeddedsw) loading 0 seconds 
+// Tcl Message: INFO: [Vivado 12-12464] The Hardware Platform can be used for Hardware INFO: [Vivado 12-4896] Successfully created Hardware Platform: C:/Users/krish/Desktop/Lab_Camera/hw/system_wrapper.xsa 
+dismissDialog("Export Hardware Platform"); // bz
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // af
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // ak
+selectMenuItem((HResource) null, "Launch Vitis IDE"); // an
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // af
+// bz (cs):  Launch Vitis IDE : addNotify
+// 'X' command handler elapsed time: 4 seconds
+dismissDialog("Launch Vitis IDE"); // bz
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1279 ms. Increasing delay to 3837 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1350 ms. Increasing delay to 3000 ms.
+// Elapsed time: 37 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // af
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // ak
+selectMenuItem((HResource) null, "Launch Vitis IDE"); // an
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // af
+// bz (cs):  Launch Vitis IDE : addNotify
+// 'X' command handler elapsed time: 3 seconds
+dismissDialog("Launch Vitis IDE"); // bz
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2044 ms. Increasing delay to 4000 ms.

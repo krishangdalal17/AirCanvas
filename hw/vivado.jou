@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Nov 24 17:34:43 2026
+# Process ID: 21588
+# Current directory: C:/Users/krish/Desktop/Lab_Camera/hw
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11176 C:\Users\krish\Desktop\Lab_Camera\hw\hw.xpr
+# Log file: C:/Users/krish/Desktop/Lab_Camera/hw/vivado.log
+# Journal file: C:/Users/krish/Desktop/Lab_Camera/hw\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/krish/Desktop/Lab_Camera/hw/hw.xpr
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/krish/Desktop/Lab_Camera/hw/system_wrapper.xsa

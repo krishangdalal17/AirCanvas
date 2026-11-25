@@ -1,0 +1,10 @@
+2026-11-24T17:40:29.884194500255-17:40:29 **** Incremental Build of configuration Debug for project pcam_hdmi ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000-make[1]: Nothing to be done for 'main-build'.
+00255-
+17:40:30 Build Finished (took 684ms)
+

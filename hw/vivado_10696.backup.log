@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Nov 24 16:50:58 2026
+# Process ID: 10696
+# Current directory: C:/Users/krish/Desktop/Krishang/College/Master's/Sem 3/EE277 Embedded System Design/Labs/Lab Camera/hw
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20592 C:\Users\krish\Desktop\Krishang\College\Master's\Sem 3\EE277 Embedded System Design\Labs\Lab Camera\hw\hw.xpr
+# Log file: C:/Users/krish/Desktop/Krishang/College/Master's/Sem 3/EE277 Embedded System Design/Labs/Lab Camera/hw/vivado.log
+# Journal file: C:/Users/krish/Desktop/Krishang/College/Master's/Sem 3/EE277 Embedded System Design/Labs/Lab Camera/hw\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/krish/Desktop/Krishang/College/Master's/Sem 3/EE277 Embedded System Design/Labs/Lab Camera/hw/hw.xpr}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/krish/Desktop/Krishang/College/Master's/Sem 3/EE277 Embedded System Design/Labs/Lab Camera/hw'
+INFO: [Project 1-313] Project file moved from 'C:/Users/krish/Desktop/hw' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/krish/Desktop/Krishang/College/Master's/Sem 3/EE277 Embedded System Design/Labs/Lab Camera/hw/hw.ipdefs/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'system.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+system_clk_wiz_0_0
+system_video_dynclk_0
+system_processing_system7_0_0
+system_rst_clk_wiz_0_50M_0
+system_rgb2dvi_0_0
+system_rst_vid_clk_dyn_0
+
+open_project: Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 1254.836 ; gain = 0.000
+update_compile_order -fileset sources_1
+open_hw_manager

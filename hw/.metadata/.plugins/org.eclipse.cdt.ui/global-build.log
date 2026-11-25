@@ -1,0 +1,17 @@
+11:39:30 **** Incremental Build of project hw_pcam ****
+buildplatform.bat 53558 hw_pcam no_domain_build 
+XSDB Server Channel: tcfchan#3
+11:39:37 **** Incremental Build of configuration Debug for project pcam_hdmi ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
+11:39:44 **** Incremental Build of configuration Debug for project pcam_hdmi_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 53558 C:/Users/krish/Desktop/hw/hw_pcam/export/hw_pcam/hw_pcam.xpfm standalone_domain C:/Users/krish/Desktop/hw/pcam_hdmi_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/krish/Desktop/hw/hw_pcam/export/hw_pcam/hw_pcam.xpfm --sys_config hw_pcam --bif C:/Users/krish/Desktop/hw/pcam_hdmi_system/Debug/system.bif --bitstream C:/Users/krish/Desktop/hw/pcam_hdmi/_ide/bitstream/system_wrapper.bit --elf C:/Users/krish/Desktop/hw/pcam_hdmi/Debug/pcam_hdmi.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/krish/Desktop/hw/pcam_hdmi/_ide/bitstream/system_wrapper.bit
+Running C:/Xilinx/Vitis/2021.1/bin/bootgen  -image C:/Users/krish/Desktop/hw/pcam_hdmi_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
