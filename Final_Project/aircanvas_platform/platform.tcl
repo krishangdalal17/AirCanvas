@@ -20,3 +20,5 @@ platform config -updatehw {C:/Users/krish/Desktop/Lab_Camera/hw/aircanvas_overla
 platform generate -domains 
 platform clean
 platform generate
+platform config -updatehw {C:/Users/krish/Desktop/Lab_Camera/hw/aircanvas_switches.xsa}
+platform generate -domains 

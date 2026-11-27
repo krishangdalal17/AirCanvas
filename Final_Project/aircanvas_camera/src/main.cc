@@ -4,7 +4,9 @@
 #include "aircanvas_tip.h"
 #include "aircanvas_draw.h"
 #include "aircanvas_calibrated_draw.h"
-#include "aircanvas_live_draw.h"
+#include "aircanvas_board_draw.h"
+#include "aircanvas_motion_draw.h"
+#include "xgpio.h"
 #include "xtime_l.h"
 #include "xil_cache.h"
 #include "platform/platform.h"
@@ -83,6 +85,60 @@ void pipeline_mode_change(AXI_VDMA<ScuGicInterruptController>& vdma_driver, OV56
 	}
 }
 
+
+// Accept a single key; ignore Enter/CRLF left in the terminal input.
+static int aircanvas_menu_key()
+{
+    int key;
+    do { key=getchar(); } while(key=='\r' || key=='\n');
+    return key;
+}
+
+static int aircanvas_test_menu()
+{
+    while(true) {
+        xil_printf("\r\n"
+            "  +--------------------------------------------------+\r\n"
+            "  |                 HARDWARE TESTS                   |\r\n"
+            "  +--------------------------------------------------+\r\n"
+            "    1  Overlay test square (clears canvas)\r\n"
+            "    2  Switches and LEDs (20 seconds)\r\n"
+            "    3  Camera center sample\r\n"
+            "    0  Back to main menu\r\n\r\n"
+            "  Select a test: ");
+        const int key=aircanvas_menu_key();
+        xil_printf("%c\r\n",key);
+        switch(key) {
+        case '1': return 'm';
+        case '2': return 'o';
+        case '3': return 'i';
+        case '0': return 0;
+        default: xil_printf("  Choose 0, 1, 2, or 3.\r\n");
+        }
+    }
+}
+
+static void aircanvas_main_menu()
+{
+    xil_printf("\r\n"
+        "  +--------------------------------------------------+\r\n"
+        "  |                    AIRCANVAS                     |\r\n"
+        "  |                Draw. Shape. Type.                |\r\n"
+        "  +--------------------------------------------------+\r\n"
+        "    n  Start AirCanvas\r\n"
+        "    t  Hardware tests\r\n\r\n"
+        "  BOARD CONTROLS\r\n"
+        "    SW0  ON: draw       OFF: pause\r\n"
+        "    SW1  Toggle ON to clear canvas and text\r\n"
+        "    SW2  Toggle ON to return to this menu\r\n"
+        "    SW3  ON: save shape and type   OFF: draw\r\n\r\n"
+        "  Close your outline before turning SW3 ON.\r\n"
+        "  Type in Tera Term; Enter = new line, Backspace = erase.\r\n"
+        "  In drawing mode, wave right-left-right to clear.\r\n"
+        "  Drawing resumes after a five-second cooldown.\r\n\r\n"
+        "  Select n or t: ");
+}
+
 int main()
 {
 	init_platform();
@@ -100,53 +156,54 @@ int main()
 	pipeline_mode_change(vdma_driver, cam, vid, Resolution::R1920_1080_60_PP, OV5640_cfg::mode_t::MODE_1080P_1920_1080_30fps);
 
 
-	xil_printf("Video init done.\r\n");
-	xil_printf("\r\nAirCanvas register check:\r\n");
-	xil_printf("CONTROL    = 0x%08x\r\n", Xil_In32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x00U));
-	xil_printf("RED_RANGE  = 0x%08x\r\n", Xil_In32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x10U));
-	xil_printf("MIN_PIXELS = %u\r\n", Xil_In32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x1CU));
+    xil_printf("\r\nCamera ready. AirCanvas is ready to use.\r\n");
 
-	// Liquid lens control
-	uint8_t read_char0 = 0;
-	uint8_t read_char1 = 0;
-	uint8_t read_char2 = 0;
-	uint8_t read_char4 = 0;
-	uint8_t read_char5 = 0;
-	uint16_t reg_addr;
-	uint8_t reg_value;
+    while (true) {
+        aircanvas_main_menu();
+        int selection=aircanvas_menu_key();
+        xil_printf("%c\r\n",selection);
+        if(selection=='N')selection='n';
+        if(selection=='t' || selection=='T') {
+            selection=aircanvas_test_menu();
+            if(!selection)continue;
+        }
+        switch(selection) {
+		case 'o': {
+		    XGpio gpio;
+		    if (XGpio_Initialize(&gpio, XPAR_AXI_GPIO_0_DEVICE_ID) != XST_SUCCESS) {
+		        xil_printf("\r\nGPIO initialization failed.\r\n");
+		        break;
+		    }
 
-	while (1) {
-		xil_printf("\r\n\r\n\r\nPcam 5C MAIN OPTIONS\r\n");
-		xil_printf("\r\nPlease press the key corresponding to the desired option:");
-		xil_printf("\r\n  a. Change Resolution");
-		xil_printf("\r\n  b. Change Liquid Lens Focus");
-		xil_printf("\r\n  d. Change Image Format (Raw or RGB)");
-		xil_printf("\r\n  e. Write a Register Inside the Image Sensor");
-		xil_printf("\r\n  f. Read a Register Inside the Image Sensor");
-		xil_printf("\r\n  g. Change Gamma Correction Factor Value");
-		xil_printf("\r\n  h. Change AWB Settings");
-		xil_printf("\r\n  i. Sample center patch");
-		xil_printf("\r\n  j. Test hand foreground");
-		xil_printf("\r\n  k. Estimate fingertip");
-		xil_printf("\r\n  l. Continuous fingertip test");
-		xil_printf("\r\n  m. Draw overlay test square");
-		xil_printf("\r\n  n. Draw with fingertip\r\n\r\n");
+		    XGpio_SetDataDirection(&gpio, 1U, 0x0FU);
+		    XGpio_SetDataDirection(&gpio, 2U, 0x00U);
+		    xil_printf("\r\nSwitch/LED test: 20 seconds. Toggle SW0-SW3.\r\n");
 
-		do {
-		    read_char0 = getchar();
-		} while (read_char0 == '\r' || read_char0 == '\n');
+		    u32 previous = 0xFFFFFFFFU;
+		    for (u32 sample = 0U; sample < 100U; ++sample) {
+		        const u32 switches = XGpio_DiscreteRead(&gpio, 1U) & 0x0FU;
+		        XGpio_DiscreteWrite(&gpio, 2U, switches);
 
-		getchar();
-		xil_printf("Read: %d\r\n", read_char0);
+		        if (switches != previous) {
+		            xil_printf("SW3 SW2 SW1 SW0 = %u %u %u %u\r\n",
+		                       (switches >> 3) & 1U, (switches >> 2) & 1U,
+		                       (switches >> 1) & 1U, switches & 1U);
+		            previous = switches;
+		        }
+		        usleep(200000U);
+		    }
 
-		switch(read_char0) {
+		    XGpio_DiscreteWrite(&gpio, 2U, 0U);
+		    xil_printf("Switch/LED test finished.\r\n");
+		    break;
+		}
 
 		case 'n': {
 		    const volatile uint8_t *frame =
 		        reinterpret_cast<const volatile uint8_t *>(
 		            static_cast<UINTPTR>(MEM_BASE_ADDR));
 
-		    aircanvas_run_live_drawing(frame, aircanvas_invalidate_row);
+		    aircanvas_run_motion_drawing(frame, aircanvas_invalidate_row);
 		    break;
 		}
 
@@ -170,84 +227,6 @@ int main()
 		    }
 
 		    xil_printf("\r\nOverlay test square sent.\r\n");
-		    break;
-		}
-
-		case 'l': {
-		    const volatile uint8_t *frame =
-		        reinterpret_cast<const volatile uint8_t *>(
-		            static_cast<UINTPTR>(MEM_BASE_ADDR));
-
-		    xil_printf("\r\nContinuous test: 20 samples\r\n");
-
-		    for (u32 sample = 0U; sample < 20U; ++sample) {
-		        XTime start_time, end_time;
-
-		        XTime_GetTime(&start_time);
-		        const AirCanvasTip tip =
-		            aircanvas_find_left_tip(frame, aircanvas_invalidate_row, 120U);
-		        XTime_GetTime(&end_time);
-
-		        const u32 scan_ms = static_cast<u32>(
-		            (end_time - start_time) / (COUNTS_PER_SECOND / 1000U));
-
-		        if (tip.valid) {
-		            xil_printf("x=%u y=%u scan=%u ms\r\n",
-		                       tip.x, tip.y, scan_ms);
-		        } else {
-		            xil_printf("No candidate scan=%u ms\r\n", scan_ms);
-		        }
-
-		        usleep(200000);
-		    }
-
-		    xil_printf("Continuous test finished.\r\n");
-		    break;
-		}
-
-		case 'k': {
-		    const volatile uint8_t *frame =
-		        reinterpret_cast<const volatile uint8_t *>(
-		            static_cast<UINTPTR>(MEM_BASE_ADDR));
-
-		    const AirCanvasTip tip =
-		        aircanvas_find_left_tip(frame, aircanvas_invalidate_row, 120U);
-
-		    if (tip.valid) {
-		        xil_printf("\r\nEstimated fingertip: x=%u y=%u\r\n",
-		                   tip.x, tip.y);
-		    } else {
-		        xil_printf("\r\nNo fingertip candidate found.\r\n");
-		    }
-		    break;
-		}
-
-		case 'j': {
-		    Xil_Out32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x10U, 0x00007800U);
-		    Xil_Out32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x14U, 0x00007800U);
-		    Xil_Out32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x18U, 0x00007800U);
-		    Xil_Out32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x1CU, 200U);
-		    Xil_Out32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x00U, 3U);
-
-		    usleep(150000);
-
-		    const u32 status =
-		        Xil_In32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x04U);
-		    const u32 x =
-		        Xil_In32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x08U);
-		    const u32 y =
-		        Xil_In32(XPAR_AIRCANVAS_VISION_0_BASEADDR + 0x0CU);
-
-		    xil_printf("\r\nHand mask status: 0x%08x\r\n", status);
-		    if ((status & 3U) == 3U) {
-		        xil_printf("Foreground center: x=%u y=%u\r\n", x, y);
-		    } else {
-		        xil_printf("No valid foreground detected.\r\n");
-		    }
-
-		    if ((status & 4U) != 0U) {
-		        xil_printf("Warning: IP reported overflow.\r\n");
-		    }
 		    break;
 		}
 
@@ -277,283 +256,11 @@ int main()
 		    break;
 		}
 
-		case 'a':
-			xil_printf("\r\n  Please press the key corresponding to the desired resolution:");
-			xil_printf("\r\n    1. 1280 x 720, 60fps");
-			xil_printf("\r\n    2. 1920 x 1080, 15fps");
-			xil_printf("\r\n    3. 1920 x 1080, 30fps");
-			read_char1 = getchar();
-			getchar();
-			xil_printf("\r\nRead: %d", read_char1);
-			switch(read_char1) {
-			case '1':
-				pipeline_mode_change(vdma_driver, cam, vid, Resolution::R1280_720_60_PP, OV5640_cfg::mode_t::MODE_720P_1280_720_60fps);
-				xil_printf("Resolution change done.\r\n");
-				break;
-			case '2':
-				pipeline_mode_change(vdma_driver, cam, vid, Resolution::R1920_1080_60_PP, OV5640_cfg::mode_t::MODE_1080P_1920_1080_15fps);
-				xil_printf("Resolution change done.\r\n");
-				break;
-			case '3':
-				pipeline_mode_change(vdma_driver, cam, vid, Resolution::R1920_1080_60_PP, OV5640_cfg::mode_t::MODE_1080P_1920_1080_30fps);
-				xil_printf("Resolution change done.\r\n");
-				break;
-			default:
-				xil_printf("\r\n  Selection is outside the available options! Please retry...");
-			}
-			break;
+        default:
+            xil_printf("  Choose n to start AirCanvas or t for hardware tests.\r\n");
+        }
+    }
 
-		case 'b':
-			xil_printf("\r\n\r\nPlease enter value of liquid lens register, in hex, with small letters: 0x");
-			//A, B, C,..., F need to be entered with small letters
-			while (read_char1 < 48) {
-				read_char1 = getchar();
-			}
-			while (read_char2 < 48) {
-				read_char2 = getchar();
-			}
-			getchar();
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char1 <= 57) {
-				read_char1 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char1 -= 87;
-			}
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char2 <= 57) {
-				read_char2 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char2 -= 87;
-			}
-			cam.writeRegLiquid((uint8_t) (16*read_char1 + read_char2));
-			xil_printf("\r\nWrote to liquid lens controller: %x", (uint8_t) (16*read_char1 + read_char2));
-			break;
-
-		case 'd':
-			xil_printf("\r\n  Please press the key corresponding to the desired setting:");
-			xil_printf("\r\n    1. Select image format to be RGB, output still Raw");
-			xil_printf("\r\n    2. Select image format & output to both be Raw");
-			read_char1 = getchar();
-			getchar();
-			xil_printf("\r\nRead: %d", read_char1);
-			switch(read_char1) {
-			case '1':
-				cam.set_isp_format(OV5640_cfg::isp_format_t::ISP_RGB);
-				xil_printf("Settings change done.\r\n");
-				break;
-			case '2':
-				cam.set_isp_format(OV5640_cfg::isp_format_t::ISP_RAW);
-				xil_printf("Settings change done.\r\n");
-				break;
-			default:
-				xil_printf("\r\n  Selection is outside the available options! Please retry...");
-			}
-			break;
-
-		case 'e':
-			xil_printf("\r\nPlease enter address of image sensor register, in hex, with small letters: \r\n");
-			//A, B, C,..., F need to be entered with small letters
-			while (read_char1 < 48) {
-				read_char1 = getchar();
-			}
-			while (read_char2 < 48) {
-				read_char2 = getchar();
-			}
-			while (read_char4 < 48) {
-				read_char4 = getchar();
-			}
-			while (read_char5 < 48) {
-				read_char5 = getchar();
-			}
-			getchar();
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char1 <= 57) {
-				read_char1 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char1 -= 87;
-			}
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char2 <= 57) {
-				read_char2 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char2 -= 87;
-			}
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char4 <= 57) {
-				read_char4 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char4 -= 87;
-			}
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char5 <= 57) {
-				read_char5 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char5 -= 87;
-			}
-			reg_addr = 16*(16*(16*read_char1 + read_char2)+read_char4)+read_char5;
-			xil_printf("Desired Register Address: %x\r\n", reg_addr);
-
-			read_char1 = 0;
-			read_char2 = 0;
-			xil_printf("\r\nPlease enter value of image sensor register, in hex, with small letters: \r\n");
-			//A, B, C,..., F need to be entered with small letters
-			while (read_char1 < 48) {
-				read_char1 = getchar();
-			}
-			while (read_char2 < 48) {
-				read_char2 = getchar();
-			}
-			getchar();
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char1 <= 57) {
-				read_char1 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char1 -= 87;
-			}
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char2 <= 57) {
-				read_char2 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char2 -= 87;
-			}
-			reg_value = 16*read_char1 + read_char2;
-			xil_printf("Desired Register Value: %x\r\n", reg_value);
-			cam.writeReg(reg_addr, reg_value);
-			xil_printf("Register write done.\r\n");
-
-			break;
-
-		case 'f':
-			xil_printf("Please enter address of image sensor register, in hex, with small letters: \r\n");
-			//A, B, C,..., F need to be entered with small letters
-			while (read_char1 < 48) {
-				read_char1 = getchar();
-			}
-			while (read_char2 < 48) {
-				read_char2 = getchar();
-			}
-			while (read_char4 < 48) {
-				read_char4 = getchar();
-			}
-			while (read_char5 < 48) {
-				read_char5 = getchar();
-			}
-			getchar();
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char1 <= 57) {
-				read_char1 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char1 -= 87;
-			}
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char2 <= 57) {
-				read_char2 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char2 -= 87;
-			}
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char4 <= 57) {
-				read_char4 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char4 -= 87;
-			}
-			// If character is a digit, convert from ASCII code to a digit between 0 and 9
-			if (read_char5 <= 57) {
-				read_char5 -= 48;
-			}
-			// If character is a letter, convert ASCII code to a number between 10 and 15
-			else {
-				read_char5 -= 87;
-			}
-			reg_addr = 16*(16*(16*read_char1 + read_char2)+read_char4)+read_char5;
-			xil_printf("Desired Register Address: %x\r\n", reg_addr);
-
-			cam.readReg(reg_addr, reg_value);
-			xil_printf("Value of Desired Register: %x\r\n", reg_value);
-
-			break;
-
-		case 'g':
-			xil_printf("  Please press the key corresponding to the desired Gamma factor:\r\n");
-			xil_printf("    1. Gamma Factor = 1\r\n");
-			xil_printf("    2. Gamma Factor = 1/1.2\r\n");
-			xil_printf("    3. Gamma Factor = 1/1.5\r\n");
-			xil_printf("    4. Gamma Factor = 1/1.8\r\n");
-			xil_printf("    5. Gamma Factor = 1/2.2\r\n");
-			read_char1 = getchar();
-			getchar();
-			xil_printf("Read: %d\r\n", read_char1);
-			// Convert from ASCII to numeric
-			read_char1 = read_char1 - 48;
-			if ((read_char1 > 0) && (read_char1 < 6)) {
-				Xil_Out32(GAMMA_BASE_ADDR, read_char1-1);
-				xil_printf("Gamma value changed to 1.\r\n");
-			}
-			else {
-				xil_printf("  Selection is outside the available options! Please retry...\r\n");
-			}
-			break;
-
-		case 'h':
-			xil_printf("  Please press the key corresponding to the desired AWB change:\r\n");
-			xil_printf("    1. Enable Advanced AWB\r\n");
-			xil_printf("    2. Enable Simple AWB\r\n");
-			xil_printf("    3. Disable AWB\r\n");
-			read_char1 = getchar();
-			getchar();
-			xil_printf("Read: %d\r\n", read_char1);
-			switch(read_char1) {
-			case '1':
-				cam.set_awb(OV5640_cfg::awb_t::AWB_ADVANCED);
-				xil_printf("Enabled Advanced AWB\r\n");
-				break;
-			case '2':
-				cam.set_awb(OV5640_cfg::awb_t::AWB_SIMPLE);
-				xil_printf("Enabled Simple AWB\r\n");
-				break;
-			case '3':
-				cam.set_awb(OV5640_cfg::awb_t::AWB_DISABLED);
-				xil_printf("Disabled AWB\r\n");
-				break;
-			default:
-				xil_printf("  Selection is outside the available options! Please retry...\r\n");
-			}
-			break;
-
-		default:
-			xil_printf("  Selection is outside the available options! Please retry...\r\n");
-		}
-
-		read_char1 = 0;
-		read_char2 = 0;
-		read_char4 = 0;
-		read_char5 = 0;
-	}
-
-
-	cleanup_platform();
-
-	return 0;
+    cleanup_platform();
+    return 0;
 }

@@ -1,0 +1,4 @@
+ca508bb8025448c76460259a50f5cace1fb8cbc341eb96d8315777c59d12d3de  checkpoints/aircanvas-before-colors-2026-11-26/aircanvas_camera.elf
+4eaa4f17445b2000d90f2a0a25be6c45148ee913b9370b4c4b1308885aaee7d5  checkpoints/aircanvas-before-colors-2026-11-26/aircanvas_switches.bit
+f526434cd6c20c78becc0fe94d483f170c40d05d0478f901c5733f0a9bac658e  checkpoints/aircanvas-before-colors-2026-11-26/ps7_init.tcl
+75fd186768e834265a7a3eb501052f4d5c8a2ef4b9818c1579c7eb5496b993da  hw/aircanvas_switches.xsa

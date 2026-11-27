@@ -1,8 +1,8 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
---Date        : Wed Aug  3 15:08:28 2022
---Host        : sim-ro running 64-bit major release  (build 9200)
+--Date        : Thu Nov 26 18:40:25 2026
+--Host        : DESKTOP-4ST7OLM running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
 --Purpose     : IP block netlist
@@ -34,6 +34,7 @@ entity system_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    SW_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
     cam_gpio_tri_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
     cam_iic_scl_io : inout STD_LOGIC;
     cam_iic_sda_io : inout STD_LOGIC;
@@ -48,7 +49,8 @@ entity system_wrapper is
     hdmi_tx_clk_n : out STD_LOGIC;
     hdmi_tx_clk_p : out STD_LOGIC;
     hdmi_tx_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    hdmi_tx_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 )
+    hdmi_tx_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    led_tri_o : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
 end system_wrapper;
 
@@ -96,7 +98,9 @@ architecture STRUCTURE of system_wrapper is
     hdmi_tx_clk_p : out STD_LOGIC;
     hdmi_tx_clk_n : out STD_LOGIC;
     hdmi_tx_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    hdmi_tx_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 )
+    hdmi_tx_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    SW_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    led_tri_o : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component system;
   component IOBUF is
@@ -162,6 +166,7 @@ system_i: component system
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      SW_tri_i(3 downto 0) => SW_tri_i(3 downto 0),
       cam_gpio_tri_i(0) => cam_gpio_tri_i_0(0),
       cam_gpio_tri_o(0) => cam_gpio_tri_o_0(0),
       cam_gpio_tri_t(0) => cam_gpio_tri_t_0(0),
@@ -182,6 +187,7 @@ system_i: component system
       hdmi_tx_clk_n => hdmi_tx_clk_n,
       hdmi_tx_clk_p => hdmi_tx_clk_p,
       hdmi_tx_data_n(2 downto 0) => hdmi_tx_data_n(2 downto 0),
-      hdmi_tx_data_p(2 downto 0) => hdmi_tx_data_p(2 downto 0)
+      hdmi_tx_data_p(2 downto 0) => hdmi_tx_data_p(2 downto 0),
+      led_tri_o(3 downto 0) => led_tri_o(3 downto 0)
     );
 end STRUCTURE;

@@ -1,0 +1,4 @@
+# Standard BSP/runtime libraries, used if Vitis omits generated objects.mk.
+ifeq ($(strip $(LIBS)),)
+LIBS := -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+endif
