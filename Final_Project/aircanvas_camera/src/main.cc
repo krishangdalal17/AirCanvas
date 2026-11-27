@@ -132,6 +132,9 @@ static void aircanvas_main_menu()
         "    SW1  Toggle ON to clear canvas and text\r\n"
         "    SW2  Toggle ON to return to this menu\r\n"
         "    SW3  ON: save shape and type   OFF: draw\r\n\r\n"
+        "  COLORS (SW3 OFF)\r\n"
+        "    1 Red  2 Blue  3 Green  4 Magenta\r\n"
+        "    5 Cyan  6 Yellow  7 White\r\n\r\n"
         "  Close your outline before turning SW3 ON.\r\n"
         "  Type in Tera Term; Enter = new line, Backspace = erase.\r\n"
         "  In drawing mode, wave right-left-right to clear.\r\n"
@@ -218,6 +221,8 @@ int main()
 		        xil_printf("\r\nOverlay is still clearing. Try again.\r\n");
 		        break;
 		    }
+
+		    Xil_Out32(overlay_base + 0x0cU, 1U);
 
 		    // Draw a square near the center of the screen.
 		    for (u32 y = 120U; y < 150U; ++y) {

@@ -6,16 +6,26 @@
 #include "aircanvas_board_draw.h"
 #include "xuartps_hw.h"
 
+// Four bits per software pixel retain the hardware's palette index (0..7).
+// The same format is used for the text mask and the immutable text underlay.
 struct AirCanvasBitmap {
-    unsigned char bits[16200];
+    unsigned char bits[64800];
+    u32 color;
+    AirCanvasBitmap():color(1U) { clear(); }
     void clear() { memset(bits,0,sizeof(bits)); }
-    bool get(int x,int y) const {
-        if(x<0||x>=480||y<0||y>=270)return false;
-        unsigned n=y*480+x;return (bits[n/8]>>(n%8))&1;
+    unsigned get(int x,int y) const {
+        if(x<0||x>=480||y<0||y>=270)return 0U;
+        const unsigned n=y*480+x;
+        return (bits[n/2]>>((n%2)*4))&7U;
     }
-    void set(int x,int y) {
+    void set(int x,int y,unsigned shade) {
         if(x<0||x>=480||y<0||y>=270)return;
-        unsigned n=y*480+x;bits[n/8]|=1U<<(n%8);
+        const unsigned n=y*480+x,shift=(n%2)*4;
+        bits[n/2]=(bits[n/2]&~(15U<<shift))|((shade&7U)<<shift);
+    }
+    void set(int x,int y) { set(x,y,color); }
+    void select_color(UINTPTR base,unsigned shade) {
+        color=shade&7U;Xil_Out32(base+0x0cU,color);
     }
     void plot(UINTPTR base,int x,int y) {
         if(x<0||x>=480||y<0||y>=270)return;
@@ -31,10 +41,26 @@ struct AirCanvasBitmap {
         for(int i=1;i<=steps;++i)brush(base,x+dx*i/steps,y+dy*i/steps);
     }
     void replay(UINTPTR base) const {
-        for(int y=0;y<270;++y)for(int x=0;x<480;++x)
-            if(get(x,y))Xil_Out32(base+4,(static_cast<u32>(y)<<16)|static_cast<u32>(x));
+        unsigned hardware_color=8U;
+        for(int y=0;y<270;++y)for(int x=0;x<480;++x) {
+            const unsigned shade=get(x,y);
+            if(!shade)continue;
+            if(shade!=hardware_color){Xil_Out32(base+0x0cU,shade);hardware_color=shade;}
+            Xil_Out32(base+4,(static_cast<u32>(y)<<16)|static_cast<u32>(x));
+        }
+        Xil_Out32(base+0x0cU,color);
     }
 };
+
+inline bool aircanvas_color_key(UINTPTR base,unsigned char key,AirCanvasBitmap &ink)
+{
+    if(key<'1'||key>'7')return false;
+    const unsigned shade=key-'0';
+    ink.select_color(base,shade);
+    static const char *const names[]={"Transparent","Red","Blue","Green","Magenta","Cyan","Yellow","White"};
+    xil_printf("\r\nInk color: %s\r\n",names[shade]);
+    return true;
+}
 
 class AirCanvasText {
 public:
@@ -84,13 +110,14 @@ public:
             if(!count_)return true;
             if(!aircanvas_board_clear(base))return false;
             --count_;x_=history_[count_].before_x;y_=history_[count_].before_y;
-            ink=underlay_;
+            const u32 selected_color=ink.color;
+            ink=underlay_;ink.color=selected_color;
             for(unsigned i=0;i<count_;++i)render(base,history_[i],ink,false);
             ink.replay(base);return true;
         }
         if(c!='\r' && c!='\n' && (c<32||c>126))return true;
         if(count_==1024)return false;
-        Entry entry={static_cast<int16_t>(x_),static_cast<int16_t>(y_),0,0,c};
+        Entry entry={static_cast<int16_t>(x_),static_cast<int16_t>(y_),0,0,c,static_cast<unsigned char>(ink.color)};
         if(c=='\r'||c=='\n') {
             x_=min_x_;y_+=18;history_[count_++]=entry;return true;
         }
@@ -109,13 +136,17 @@ public:
         x_=found_x+9;y_=found_y;return true;
     }
 private:
-    struct Entry {int16_t before_x,before_y,x,y;unsigned char c;};
+    struct Entry {int16_t before_x,before_y,x,y;unsigned char c,color;};
     void render(UINTPTR base,const Entry &e,AirCanvasBitmap &ink,bool hardware) {
         if(e.c<32||e.c>126)return;
+        if(hardware)Xil_Out32(base+0x0cU,e.color);
         for(int y=0;y<16;++y)for(int x=0;x<8;++x) {
             if((aircanvas_font[e.c-32][y]>>x)&1) {
-                if(hardware)ink.plot(base,e.x+x,e.y+y);
-                else ink.set(e.x+x,e.y+y);
+                if(hardware) {
+                    ink.set(e.x+x,e.y+y,e.color);
+                    Xil_Out32(base+4,(static_cast<u32>(e.y+y)<<16)|static_cast<u32>(e.x+x));
+                }
+                else ink.set(e.x+x,e.y+y,e.color);
             }
         }
     }

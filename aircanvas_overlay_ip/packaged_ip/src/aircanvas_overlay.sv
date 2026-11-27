@@ -1,7 +1,10 @@
 `timescale 1ns/1ps
-// 480x270 one-bit canvas, expanded 4x over a 1920x1080 AXI video stream.
+// 480x270 three-bit palette canvas, expanded 4x over a 1920x1080 AXI stream.
 // AXI-Lite: 0x00 write bit 0 to clear; 0x04 write {7'b0,y[8:0],7'b0,x[8:0]}
 // to set one canvas pixel; 0x08 read bit 0 = clearing/busy.
+// 0x0c read/write bits [2:0] = color used for subsequent pixel writes.
+// 0 transparent, 1 red (reset default), 2 green, 3 blue, 4 yellow,
+// 5 cyan, 6 magenta, 7 white. Clearing the canvas preserves selected color.
 // Wait for busy to clear before plotting. The canvas starts by clearing itself.
 module aircanvas_overlay (
     (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 stream_clk CLK" *)
@@ -44,7 +47,8 @@ module aircanvas_overlay (
     localparam integer CANVAS_CELLS = CANVAS_W * CANVAS_H;
 
     // Inferred simple dual-port block RAM: CPU writes, video reads.
-    (* ram_style = "block" *) logic canvas [0:129599]; // 480 * 270 cells
+    (* ram_style = "block" *) logic [2:0] canvas [0:129599]; // 480 * 270 cells
+    logic [2:0] paint_color_q;
     logic clearing_q;
     logic [16:0] clear_addr_q;
     logic aw_hold_q, w_hold_q;
@@ -72,6 +76,7 @@ module aircanvas_overlay (
 
     always_ff @(posedge s_axi_aclk) begin
         if (!s_axi_aresetn) begin
+            paint_color_q <= 3'd1;
             aw_hold_q    <= 1'b0;
             w_hold_q     <= 1'b0;
             awaddr_q     <= '0;
@@ -91,6 +96,8 @@ module aircanvas_overlay (
                 wstrb_q <= s_axi_wstrb;
             end
             if (write_fire) begin
+                if (awaddr_q[5:2] == 4'h3 && wstrb_q[0])
+                    paint_color_q <= wdata_q[2:0];
                 aw_hold_q <= 1'b0;
                 w_hold_q <= 1'b0;
                 s_axi_bvalid <= 1'b1;
@@ -101,6 +108,7 @@ module aircanvas_overlay (
             if (s_axi_arvalid && s_axi_arready) begin
                 case (s_axi_araddr[5:2])
                     4'h2: s_axi_rdata <= {31'd0, clearing_q};
+                    4'h3: s_axi_rdata <= {29'd0, paint_color_q};
                     default: s_axi_rdata <= 32'd0;
                 endcase
                 s_axi_rvalid <= 1'b1;
@@ -115,7 +123,7 @@ module aircanvas_overlay (
                                (clearing_q || plot_req);
     wire [16:0] canvas_write_address = clearing_q ? clear_addr_q
                                                    : plot_addr_full[16:0];
-    wire canvas_write_data = !clearing_q;
+    wire [2:0] canvas_write_data = clearing_q ? 3'd0 : paint_color_q;
 
     always_ff @(posedge s_axi_aclk) begin
         if (canvas_write_enable)
@@ -154,7 +162,7 @@ module aircanvas_overlay (
     logic [16:0] row_base_q;
     logic [23:0] pixel_q;
     logic valid_q, user_q, last_q, overlay_enable_q;
-    logic canvas_pixel_q;
+    logic [2:0] canvas_pixel_q;
 
     wire stage_ready = !valid_q || m_axis_tready;
     wire input_fire = s_axis_tvalid && s_axis_tready;
@@ -168,8 +176,21 @@ module aircanvas_overlay (
 
     assign s_axis_tready = stage_ready;
     assign m_axis_tvalid = valid_q;
-    assign m_axis_tdata = (overlay_enable_q && canvas_pixel_q)
-                        ? 24'hff0000 : pixel_q;
+    function automatic logic [23:0] palette_rgb(input logic [2:0] color);
+        case (color)
+            3'd1: palette_rgb = 24'hff0000;
+            3'd2: palette_rgb = 24'h00ff00;
+            3'd3: palette_rgb = 24'h0000ff;
+            3'd4: palette_rgb = 24'hffff00;
+            3'd5: palette_rgb = 24'h00ffff;
+            3'd6: palette_rgb = 24'hff00ff;
+            3'd7: palette_rgb = 24'hffffff;
+            default: palette_rgb = 24'h000000;
+        endcase
+    endfunction
+
+    assign m_axis_tdata = (overlay_enable_q && canvas_pixel_q != 3'd0)
+                        ? palette_rgb(canvas_pixel_q) : pixel_q;
     assign m_axis_tuser = user_q;
     assign m_axis_tlast = last_q;
 

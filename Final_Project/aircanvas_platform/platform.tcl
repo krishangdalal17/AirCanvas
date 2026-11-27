@@ -22,3 +22,5 @@ platform clean
 platform generate
 platform config -updatehw {C:/Users/krish/Desktop/Lab_Camera/hw/aircanvas_switches.xsa}
 platform generate -domains 
+platform config -updatehw {C:/Users/krish/Desktop/Lab_Camera/hw/aircanvas_colors.xsa}
+platform generate -domains 

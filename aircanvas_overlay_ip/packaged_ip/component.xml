@@ -370,7 +370,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>631470bf</spirit:value>
+            <spirit:value>05ed4fea</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -386,7 +386,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>631470bf</spirit:value>
+            <spirit:value>05ed4fea</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -899,7 +899,7 @@
       <spirit:file>
         <spirit:name>src/aircanvas_overlay.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_631470bf</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_05ed4fea</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -961,21 +961,27 @@
       </xilinx:taxonomies>
       <xilinx:displayName>aircanvas_overlay_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2026-11-26T21:28:09Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2026-11-27T07:39:15Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.df@1e00fe4e_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@5b615755_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@16bcb12_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@6d204a1d_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@4887dc2b_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6ce78f0b_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45e7c31f_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2bf23e00_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ef83e35_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e5136ff_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21746bdb_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/aircanvas_overlay_ip/packaged_ip</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="1b5c2947"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="769c350d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="63387de9"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8f804420"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="2fb9165e"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="021ec245"/>
     </xilinx:packagingInfo>

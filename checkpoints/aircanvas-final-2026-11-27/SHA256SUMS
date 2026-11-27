@@ -1,0 +1,5 @@
+655a0873b8e6f1130ead9f3a3386679b13d36642bc13d7243af76811c2040d27  checkpoints/aircanvas-final-2026-11-27/aircanvas_camera.elf
+dd0d295760cf68e20e4c36b39b641a31f2f9883ff6f90a38d322ff0f80dbe4d6  checkpoints/aircanvas-final-2026-11-27/aircanvas_colors.bit
+f526434cd6c20c78becc0fe94d483f170c40d05d0478f901c5733f0a9bac658e  checkpoints/aircanvas-final-2026-11-27/ps7_init.tcl
+29ade72194cfeeec4619db52e6489d37b4d52e155bc13785a7b6178bd930426d  checkpoints/aircanvas-final-2026-11-27/timing_summary.rpt
+abb03c19fd7f31f7c45114f107f0b313a30c5f6ca9c7c09ffa8237e619537414  hw/aircanvas_colors.xsa

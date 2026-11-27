@@ -52,8 +52,8 @@
       "video_dynclk": "",
       "MIPI_D_PHY_RX_0": "",
       "aircanvas_vision_0": "",
-      "aircanvas_overlay_0": "",
-      "axi_gpio_0": ""
+      "axi_gpio_0": "",
+      "aircanvas_overlay_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -4045,12 +4045,6 @@
         "xci_path": "ip\\system_aircanvas_vision_0_0\\system_aircanvas_vision_0_0.xci",
         "inst_hier_path": "aircanvas_vision_0"
       },
-      "aircanvas_overlay_0": {
-        "vlnv": "xilinx.com:user:aircanvas_overlay:1.0",
-        "xci_name": "system_aircanvas_overlay_0_0",
-        "xci_path": "ip\\system_aircanvas_overlay_0_0\\system_aircanvas_overlay_0_0.xci",
-        "inst_hier_path": "aircanvas_overlay_0"
-      },
       "axi_gpio_0": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "system_axi_gpio_0_0",
@@ -4073,6 +4067,12 @@
             "value": "1"
           }
         }
+      },
+      "aircanvas_overlay_0": {
+        "vlnv": "xilinx.com:user:aircanvas_overlay:1.0",
+        "xci_name": "system_aircanvas_overlay_0_0",
+        "xci_path": "ip\\system_aircanvas_overlay_0_0\\system_aircanvas_overlay_0_0.xci",
+        "inst_hier_path": "aircanvas_overlay_0"
       }
     },
     "interface_nets": {
@@ -4422,11 +4422,11 @@
           "MIPI_D_PHY_RX_0/s_axi_lite_aresetn",
           "aircanvas_vision_0/stream_resetn",
           "aircanvas_vision_0/s_axi_aresetn",
-          "aircanvas_overlay_0/stream_resetn",
-          "aircanvas_overlay_0/s_axi_aresetn",
           "ps7_0_axi_periph/M07_ARESETN",
           "axi_gpio_0/s_axi_aresetn",
-          "ps7_0_axi_periph/M08_ARESETN"
+          "ps7_0_axi_periph/M08_ARESETN",
+          "aircanvas_overlay_0/stream_resetn",
+          "aircanvas_overlay_0/s_axi_aresetn"
         ]
       },
       "rst_clk_wiz_0_50M_peripheral_reset": {
@@ -4468,10 +4468,10 @@
           "ps7_0_axi_periph/M06_ACLK",
           "MIPI_D_PHY_RX_0/s_axi_lite_aclk",
           "aircanvas_vision_0/s_axi_aclk",
-          "aircanvas_overlay_0/s_axi_aclk",
           "ps7_0_axi_periph/M07_ACLK",
           "axi_gpio_0/s_axi_aclk",
-          "ps7_0_axi_periph/M08_ACLK"
+          "ps7_0_axi_periph/M08_ACLK",
+          "aircanvas_overlay_0/s_axi_aclk"
         ]
       },
       "v_axi4s_vid_out_0_locked": {

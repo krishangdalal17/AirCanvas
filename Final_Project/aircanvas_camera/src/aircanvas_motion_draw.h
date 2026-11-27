@@ -115,7 +115,7 @@ inline void aircanvas_run_motion_drawing(
     shape.clear();
     static AirCanvasBitmap ink;
     static AirCanvasText text;
-    ink.clear();text.reset();
+    ink.clear();ink.color=1U;text.reset();
     bool outline_dirty=true;
     AirCanvasBoardControls controls;
     if (!aircanvas_board_controls_init(controls)) {
@@ -127,6 +127,11 @@ inline void aircanvas_run_motion_drawing(
         return;
     }
 
+    ink.select_color(base,1U);
+    if((Xil_In32(base+0x0cU)&7U)!=1U) {
+        xil_printf("\r\nColor overlay not loaded. Run with aircanvas_colors.bit.\r\n");
+        return;
+    }
     xil_printf("\r\nKeep camera still. Remove hand for background calibration.\r\n");
     for (int seconds=3; seconds>0; --seconds) {
         xil_printf("%d...\r\n",seconds);
@@ -141,6 +146,7 @@ inline void aircanvas_run_motion_drawing(
     xil_printf("LD0 = draw enabled; LD1 = wave cooldown; LD2 = shape saved. SW3 confirms outline.\r\n");
 
     xil_printf("Draw one continuous closed outline, return to its start, then turn SW3 ON.\r\n");
+    xil_printf("Colors (SW3 OFF): 1 Red | 2 Blue | 3 Green | 4 Magenta | 5 Cyan | 6 Yellow | 7 White\r\n");
     AirCanvasWaveGesture gesture;
     bool have_previous = false;
     bool previous_enabled = false;
@@ -194,8 +200,12 @@ inline void aircanvas_run_motion_drawing(
         const bool enabled = (controls.stable & 0x01U) != 0U && !selecting;
         for(unsigned bytes=0;bytes<32 && XUartPs_IsReceiveData(STDIN_BASEADDRESS);++bytes) {
             const u8 key=XUartPs_RecvByte(STDIN_BASEADDRESS);
-            if(selecting && text.ready() && !text.key(base,key,ink))
-                xil_printf("\r\nNo room for more text in this shape (or clear is busy).\r\n");
+            if(selecting) {
+                if(text.ready() && !text.key(base,key,ink))
+                    xil_printf("\r\nNo room for more text in this shape (or clear is busy).\r\n");
+            } else {
+                aircanvas_color_key(base,key,ink);
+            }
         }
         if(selecting) {
             have_previous=false;
