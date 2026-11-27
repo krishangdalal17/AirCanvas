@@ -53,6 +53,8 @@
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/hw.ipdefs/repo"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../aircanvas_overlay_ip/packaged_ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../aircanvas_ip/packaged_ip"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -70,13 +72,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="0"/>
-    <Option Name="WTModelSimExportSim" Val="0"/>
-    <Option Name="WTQuestaExportSim" Val="0"/>
-    <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="0"/>
-    <Option Name="WTRivieraExportSim" Val="0"/>
-    <Option Name="WTActivehdlExportSim" Val="0"/>
+    <Option Name="WTXSimExportSim" Val="5"/>
+    <Option Name="WTModelSimExportSim" Val="5"/>
+    <Option Name="WTQuestaExportSim" Val="5"/>
+    <Option Name="WTIesExportSim" Val="5"/>
+    <Option Name="WTVcsExportSim" Val="5"/>
+    <Option Name="WTRivieraExportSim" Val="5"/>
+    <Option Name="WTActivehdlExportSim" Val="5"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -125,32 +127,29 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_aircanvas_overlay_0_0/system_aircanvas_overlay_0_0.xci">
+          <Proxy FileSetName="system_aircanvas_overlay_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_rst_clk_wiz_0_50M_0/system_rst_clk_wiz_0_50M_0.xci">
+          <Proxy FileSetName="system_rst_clk_wiz_0_50M_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_AXI_BayerToRGB_0_0/system_AXI_BayerToRGB_0_0.xci">
           <Proxy FileSetName="system_AXI_BayerToRGB_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_AXI_GammaCorrection_1_0/system_AXI_GammaCorrection_1_0.xci">
           <Proxy FileSetName="system_AXI_GammaCorrection_1_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_axi_vdma_0_0/system_axi_vdma_0_0.xci">
+          <Proxy FileSetName="system_axi_vdma_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_DVIClocking_1_0/system_DVIClocking_1_0.xci">
           <Proxy FileSetName="system_DVIClocking_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_MIPI_D_PHY_RX_0_0/system_MIPI_D_PHY_RX_0_0.xci">
-          <Proxy FileSetName="system_MIPI_D_PHY_RX_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_MIPI_CSI_2_RX_0_0/system_MIPI_CSI_2_RX_0_0.xci">
-          <Proxy FileSetName="system_MIPI_CSI_2_RX_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_auto_pc_0/system_auto_pc_0.xci">
-          <Proxy FileSetName="system_auto_pc_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_auto_pc_2/system_auto_pc_2.xci">
-          <Proxy FileSetName="system_auto_pc_2"/>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_vtg_0/system_vtg_0.xci">
+          <Proxy FileSetName="system_vtg_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_processing_system7_0_0/system_processing_system7_0_0.xci">
           <Proxy FileSetName="system_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xci">
-          <Proxy FileSetName="system_clk_wiz_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_rgb2dvi_0_0/system_rgb2dvi_0_0.xci">
           <Proxy FileSetName="system_rgb2dvi_0_0"/>
@@ -158,26 +157,26 @@
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_rst_vid_clk_dyn_0/system_rst_vid_clk_dyn_0.xci">
           <Proxy FileSetName="system_rst_vid_clk_dyn_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_MIPI_D_PHY_RX_0_0/system_MIPI_D_PHY_RX_0_0.xci">
+          <Proxy FileSetName="system_MIPI_D_PHY_RX_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_v_axi4s_vid_out_0_0/system_v_axi4s_vid_out_0_0.xci">
           <Proxy FileSetName="system_v_axi4s_vid_out_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_axi_vdma_0_0/system_axi_vdma_0_0.xci">
-          <Proxy FileSetName="system_axi_vdma_0_0"/>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_MIPI_CSI_2_RX_0_0/system_MIPI_CSI_2_RX_0_0.xci">
+          <Proxy FileSetName="system_MIPI_CSI_2_RX_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_video_dynclk_0/system_video_dynclk_0.xci">
-          <Proxy FileSetName="system_video_dynclk_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_auto_pc_1/system_auto_pc_1.xci">
-          <Proxy FileSetName="system_auto_pc_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_rst_clk_wiz_0_50M_0/system_rst_clk_wiz_0_50M_0.xci">
-          <Proxy FileSetName="system_rst_clk_wiz_0_50M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_vtg_0/system_vtg_0.xci">
-          <Proxy FileSetName="system_vtg_0"/>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_aircanvas_vision_0_0/system_aircanvas_vision_0_0.xci">
+          <Proxy FileSetName="system_aircanvas_vision_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_xbar_0/system_xbar_0.xci">
           <Proxy FileSetName="system_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xci">
+          <Proxy FileSetName="system_clk_wiz_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="system.bd" FileRelPathName="ip/system_video_dynclk_0/system_video_dynclk_0.xci">
+          <Proxy FileSetName="system_video_dynclk_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/system_wrapper.vhd">
@@ -249,99 +248,9 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
-    <FileSet Name="system_v_axi4s_vid_out_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_v_axi4s_vid_out_0_0" RelGenDir="$PGENDIR/system_v_axi4s_vid_out_0_0">
-      <Config>
-        <Option Name="TopModule" Val="system_v_axi4s_vid_out_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_auto_pc_0" RelGenDir="$PGENDIR/system_auto_pc_0">
-      <Config>
-        <Option Name="TopModule" Val="system_auto_pc_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="system_AXI_BayerToRGB_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_AXI_BayerToRGB_0_0" RelGenDir="$PGENDIR/system_AXI_BayerToRGB_0_0">
       <Config>
         <Option Name="TopModule" Val="system_AXI_BayerToRGB_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_clk_wiz_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_clk_wiz_0_0" RelGenDir="$PGENDIR/system_clk_wiz_0_0">
-      <Config>
-        <Option Name="TopModule" Val="system_clk_wiz_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_rgb2dvi_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_rgb2dvi_0_0" RelGenDir="$PGENDIR/system_rgb2dvi_0_0">
-      <Config>
-        <Option Name="TopModule" Val="system_rgb2dvi_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_vtg_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_vtg_0" RelGenDir="$PGENDIR/system_vtg_0">
-      <Config>
-        <Option Name="TopModule" Val="system_vtg_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_MIPI_CSI_2_RX_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_MIPI_CSI_2_RX_0_0" RelGenDir="$PGENDIR/system_MIPI_CSI_2_RX_0_0">
-      <Config>
-        <Option Name="TopModule" Val="system_MIPI_CSI_2_RX_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_MIPI_D_PHY_RX_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_MIPI_D_PHY_RX_0_0" RelGenDir="$PGENDIR/system_MIPI_D_PHY_RX_0_0">
-      <Config>
-        <Option Name="TopModule" Val="system_MIPI_D_PHY_RX_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_video_dynclk_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_video_dynclk_0" RelGenDir="$PGENDIR/system_video_dynclk_0">
-      <Config>
-        <Option Name="TopModule" Val="system_video_dynclk_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_processing_system7_0_0" RelGenDir="$PGENDIR/system_processing_system7_0_0">
-      <Config>
-        <Option Name="TopModule" Val="system_processing_system7_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_auto_pc_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_auto_pc_2" RelGenDir="$PGENDIR/system_auto_pc_2">
-      <Config>
-        <Option Name="TopModule" Val="system_auto_pc_2"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_auto_pc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_auto_pc_1" RelGenDir="$PGENDIR/system_auto_pc_1">
-      <Config>
-        <Option Name="TopModule" Val="system_auto_pc_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_rst_vid_clk_dyn_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_rst_vid_clk_dyn_0" RelGenDir="$PGENDIR/system_rst_vid_clk_dyn_0">
-      <Config>
-        <Option Name="TopModule" Val="system_rst_vid_clk_dyn_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_DVIClocking_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_DVIClocking_1_0" RelGenDir="$PGENDIR/system_DVIClocking_1_0">
-      <Config>
-        <Option Name="TopModule" Val="system_DVIClocking_1_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_xbar_0" RelGenDir="$PGENDIR/system_xbar_0">
-      <Config>
-        <Option Name="TopModule" Val="system_xbar_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="system_rst_clk_wiz_0_50M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_rst_clk_wiz_0_50M_0" RelGenDir="$PGENDIR/system_rst_clk_wiz_0_50M_0">
-      <Config>
-        <Option Name="TopModule" Val="system_rst_clk_wiz_0_50M_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -351,9 +260,93 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="system_DVIClocking_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_DVIClocking_1_0" RelGenDir="$PGENDIR/system_DVIClocking_1_0">
+      <Config>
+        <Option Name="TopModule" Val="system_DVIClocking_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_MIPI_CSI_2_RX_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_MIPI_CSI_2_RX_0_0" RelGenDir="$PGENDIR/system_MIPI_CSI_2_RX_0_0">
+      <Config>
+        <Option Name="TopModule" Val="system_MIPI_CSI_2_RX_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="system_axi_vdma_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_axi_vdma_0_0" RelGenDir="$PGENDIR/system_axi_vdma_0_0">
       <Config>
         <Option Name="TopModule" Val="system_axi_vdma_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_clk_wiz_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_clk_wiz_0_0" RelGenDir="$PGENDIR/system_clk_wiz_0_0">
+      <Config>
+        <Option Name="TopModule" Val="system_clk_wiz_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_processing_system7_0_0" RelGenDir="$PGENDIR/system_processing_system7_0_0">
+      <Config>
+        <Option Name="TopModule" Val="system_processing_system7_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_xbar_0" RelGenDir="$PGENDIR/system_xbar_0">
+      <Config>
+        <Option Name="TopModule" Val="system_xbar_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_rgb2dvi_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_rgb2dvi_0_0" RelGenDir="$PGENDIR/system_rgb2dvi_0_0">
+      <Config>
+        <Option Name="TopModule" Val="system_rgb2dvi_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_rst_clk_wiz_0_50M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_rst_clk_wiz_0_50M_0" RelGenDir="$PGENDIR/system_rst_clk_wiz_0_50M_0">
+      <Config>
+        <Option Name="TopModule" Val="system_rst_clk_wiz_0_50M_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_rst_vid_clk_dyn_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_rst_vid_clk_dyn_0" RelGenDir="$PGENDIR/system_rst_vid_clk_dyn_0">
+      <Config>
+        <Option Name="TopModule" Val="system_rst_vid_clk_dyn_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_v_axi4s_vid_out_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_v_axi4s_vid_out_0_0" RelGenDir="$PGENDIR/system_v_axi4s_vid_out_0_0">
+      <Config>
+        <Option Name="TopModule" Val="system_v_axi4s_vid_out_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_video_dynclk_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_video_dynclk_0" RelGenDir="$PGENDIR/system_video_dynclk_0">
+      <Config>
+        <Option Name="TopModule" Val="system_video_dynclk_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_vtg_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_vtg_0" RelGenDir="$PGENDIR/system_vtg_0">
+      <Config>
+        <Option Name="TopModule" Val="system_vtg_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_MIPI_D_PHY_RX_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_MIPI_D_PHY_RX_0_0" RelGenDir="$PGENDIR/system_MIPI_D_PHY_RX_0_0">
+      <Config>
+        <Option Name="TopModule" Val="system_MIPI_D_PHY_RX_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_aircanvas_vision_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_aircanvas_vision_0_0" RelGenDir="$PGENDIR/system_aircanvas_vision_0_0">
+      <Config>
+        <Option Name="TopModule" Val="system_aircanvas_vision_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="system_aircanvas_overlay_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_aircanvas_overlay_0_0" RelGenDir="$PGENDIR/system_aircanvas_overlay_0_0">
+      <Config>
+        <Option Name="TopModule" Val="system_aircanvas_overlay_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -379,7 +372,9 @@
   <Runs Version="1" Minor="15">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -387,7 +382,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_v_axi4s_vid_out_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_v_axi4s_vid_out_0_0" Part="xc7z010clg400-1" ConstrsSet="system_v_axi4s_vid_out_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_v_axi4s_vid_out_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_v_axi4s_vid_out_0_0_synth_1">
+    <Run Id="system_AXI_BayerToRGB_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_AXI_BayerToRGB_0_0" Part="xc7z010clg400-1" ConstrsSet="system_AXI_BayerToRGB_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_AXI_BayerToRGB_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_AXI_BayerToRGB_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -397,7 +392,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="system_auto_pc_0" Part="xc7z010clg400-1" ConstrsSet="system_auto_pc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_auto_pc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_auto_pc_0_synth_1">
+    <Run Id="system_AXI_GammaCorrection_1_0_synth_1" Type="Ft3:Synth" SrcSet="system_AXI_GammaCorrection_1_0" Part="xc7z010clg400-1" ConstrsSet="system_AXI_GammaCorrection_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_AXI_GammaCorrection_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_AXI_GammaCorrection_1_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -407,7 +402,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_AXI_BayerToRGB_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_AXI_BayerToRGB_0_0" Part="xc7z010clg400-1" ConstrsSet="system_AXI_BayerToRGB_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_AXI_BayerToRGB_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_AXI_BayerToRGB_0_0_synth_1">
+    <Run Id="system_DVIClocking_1_0_synth_1" Type="Ft3:Synth" SrcSet="system_DVIClocking_1_0" Part="xc7z010clg400-1" ConstrsSet="system_DVIClocking_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_DVIClocking_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_DVIClocking_1_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -417,7 +412,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_clk_wiz_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_clk_wiz_0_0" Part="xc7z010clg400-1" ConstrsSet="system_clk_wiz_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_clk_wiz_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_clk_wiz_0_0_synth_1">
+    <Run Id="system_MIPI_CSI_2_RX_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_MIPI_CSI_2_RX_0_0" Part="xc7z010clg400-1" ConstrsSet="system_MIPI_CSI_2_RX_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_MIPI_CSI_2_RX_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_MIPI_CSI_2_RX_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -427,7 +422,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_rgb2dvi_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_rgb2dvi_0_0" Part="xc7z010clg400-1" ConstrsSet="system_rgb2dvi_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_rgb2dvi_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_rgb2dvi_0_0_synth_1">
+    <Run Id="system_axi_vdma_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_axi_vdma_0_0" Part="xc7z010clg400-1" ConstrsSet="system_axi_vdma_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_axi_vdma_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_vdma_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -437,7 +432,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_vtg_0_synth_1" Type="Ft3:Synth" SrcSet="system_vtg_0" Part="xc7z010clg400-1" ConstrsSet="system_vtg_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_vtg_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_vtg_0_synth_1">
+    <Run Id="system_clk_wiz_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_clk_wiz_0_0" Part="xc7z010clg400-1" ConstrsSet="system_clk_wiz_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_clk_wiz_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_clk_wiz_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -447,7 +442,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_MIPI_CSI_2_RX_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_MIPI_CSI_2_RX_0_0" Part="xc7z010clg400-1" ConstrsSet="system_MIPI_CSI_2_RX_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_MIPI_CSI_2_RX_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_MIPI_CSI_2_RX_0_0_synth_1">
+    <Run Id="system_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_processing_system7_0_0" Part="xc7z010clg400-1" ConstrsSet="system_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_processing_system7_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -457,7 +452,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_MIPI_D_PHY_RX_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_MIPI_D_PHY_RX_0_0" Part="xc7z010clg400-1" ConstrsSet="system_MIPI_D_PHY_RX_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_MIPI_D_PHY_RX_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_MIPI_D_PHY_RX_0_0_synth_1">
+    <Run Id="system_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="system_xbar_0" Part="xc7z010clg400-1" ConstrsSet="system_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_xbar_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_xbar_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -467,7 +462,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_video_dynclk_0_synth_1" Type="Ft3:Synth" SrcSet="system_video_dynclk_0" Part="xc7z010clg400-1" ConstrsSet="system_video_dynclk_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_video_dynclk_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_video_dynclk_0_synth_1">
+    <Run Id="system_rgb2dvi_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_rgb2dvi_0_0" Part="xc7z010clg400-1" ConstrsSet="system_rgb2dvi_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_rgb2dvi_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rgb2dvi_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -477,7 +472,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_processing_system7_0_0" Part="xc7z010clg400-1" ConstrsSet="system_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_processing_system7_0_0_synth_1">
+    <Run Id="system_rst_clk_wiz_0_50M_0_synth_1" Type="Ft3:Synth" SrcSet="system_rst_clk_wiz_0_50M_0" Part="xc7z010clg400-1" ConstrsSet="system_rst_clk_wiz_0_50M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_rst_clk_wiz_0_50M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rst_clk_wiz_0_50M_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -487,7 +482,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_auto_pc_2_synth_1" Type="Ft3:Synth" SrcSet="system_auto_pc_2" Part="xc7z010clg400-1" ConstrsSet="system_auto_pc_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_auto_pc_2_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_auto_pc_2_synth_1">
+    <Run Id="system_rst_vid_clk_dyn_0_synth_1" Type="Ft3:Synth" SrcSet="system_rst_vid_clk_dyn_0" Part="xc7z010clg400-1" ConstrsSet="system_rst_vid_clk_dyn_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_rst_vid_clk_dyn_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rst_vid_clk_dyn_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -497,7 +492,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="system_auto_pc_1" Part="xc7z010clg400-1" ConstrsSet="system_auto_pc_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_auto_pc_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_auto_pc_1_synth_1">
+    <Run Id="system_v_axi4s_vid_out_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_v_axi4s_vid_out_0_0" Part="xc7z010clg400-1" ConstrsSet="system_v_axi4s_vid_out_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_v_axi4s_vid_out_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_v_axi4s_vid_out_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -507,7 +502,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_rst_vid_clk_dyn_0_synth_1" Type="Ft3:Synth" SrcSet="system_rst_vid_clk_dyn_0" Part="xc7z010clg400-1" ConstrsSet="system_rst_vid_clk_dyn_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_rst_vid_clk_dyn_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_rst_vid_clk_dyn_0_synth_1">
+    <Run Id="system_video_dynclk_0_synth_1" Type="Ft3:Synth" SrcSet="system_video_dynclk_0" Part="xc7z010clg400-1" ConstrsSet="system_video_dynclk_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_video_dynclk_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_video_dynclk_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -517,7 +512,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_DVIClocking_1_0_synth_1" Type="Ft3:Synth" SrcSet="system_DVIClocking_1_0" Part="xc7z010clg400-1" ConstrsSet="system_DVIClocking_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_DVIClocking_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_DVIClocking_1_0_synth_1">
+    <Run Id="system_vtg_0_synth_1" Type="Ft3:Synth" SrcSet="system_vtg_0" Part="xc7z010clg400-1" ConstrsSet="system_vtg_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_vtg_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_vtg_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -527,7 +522,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="system_xbar_0" Part="xc7z010clg400-1" ConstrsSet="system_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_xbar_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_xbar_0_synth_1">
+    <Run Id="system_MIPI_D_PHY_RX_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_MIPI_D_PHY_RX_0_0" Part="xc7z010clg400-1" ConstrsSet="system_MIPI_D_PHY_RX_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_MIPI_D_PHY_RX_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_MIPI_D_PHY_RX_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -537,7 +532,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_rst_clk_wiz_0_50M_0_synth_1" Type="Ft3:Synth" SrcSet="system_rst_clk_wiz_0_50M_0" Part="xc7z010clg400-1" ConstrsSet="system_rst_clk_wiz_0_50M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_rst_clk_wiz_0_50M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_rst_clk_wiz_0_50M_0_synth_1">
+    <Run Id="system_aircanvas_vision_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_aircanvas_vision_0_0" Part="xc7z010clg400-1" ConstrsSet="system_aircanvas_vision_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_aircanvas_vision_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_aircanvas_vision_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -547,19 +542,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_AXI_GammaCorrection_1_0_synth_1" Type="Ft3:Synth" SrcSet="system_AXI_GammaCorrection_1_0" Part="xc7z010clg400-1" ConstrsSet="system_AXI_GammaCorrection_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_AXI_GammaCorrection_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_AXI_GammaCorrection_1_0_synth_1">
+    <Run Id="system_aircanvas_overlay_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_aircanvas_overlay_0_0" Part="xc7z010clg400-1" ConstrsSet="system_aircanvas_overlay_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_aircanvas_overlay_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_aircanvas_overlay_0_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="system_axi_vdma_0_0_synth_1" Type="Ft3:Synth" SrcSet="system_axi_vdma_0_0" Part="xc7z010clg400-1" ConstrsSet="system_axi_vdma_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/system_axi_vdma_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_axi_vdma_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -569,7 +556,9 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -585,7 +574,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_v_axi4s_vid_out_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_v_axi4s_vid_out_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_v_axi4s_vid_out_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_v_axi4s_vid_out_0_0_impl_1">
+    <Run Id="system_AXI_BayerToRGB_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_AXI_BayerToRGB_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_AXI_BayerToRGB_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_AXI_BayerToRGB_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -602,7 +591,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_auto_pc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_auto_pc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_auto_pc_0_impl_1">
+    <Run Id="system_AXI_GammaCorrection_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_AXI_GammaCorrection_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_AXI_GammaCorrection_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_AXI_GammaCorrection_1_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -619,7 +608,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_AXI_BayerToRGB_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_AXI_BayerToRGB_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_AXI_BayerToRGB_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_AXI_BayerToRGB_0_0_impl_1">
+    <Run Id="system_DVIClocking_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_DVIClocking_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_DVIClocking_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_DVIClocking_1_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -636,7 +625,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_clk_wiz_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_clk_wiz_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_clk_wiz_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_clk_wiz_0_0_impl_1">
+    <Run Id="system_MIPI_CSI_2_RX_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_MIPI_CSI_2_RX_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_MIPI_CSI_2_RX_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_MIPI_CSI_2_RX_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -653,7 +642,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_rgb2dvi_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_rgb2dvi_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_rgb2dvi_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_rgb2dvi_0_0_impl_1">
+    <Run Id="system_axi_vdma_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_axi_vdma_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_axi_vdma_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_axi_vdma_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -670,7 +659,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_vtg_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_vtg_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_vtg_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_vtg_0_impl_1">
+    <Run Id="system_clk_wiz_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_clk_wiz_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_clk_wiz_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_clk_wiz_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -687,7 +676,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_MIPI_CSI_2_RX_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_MIPI_CSI_2_RX_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_MIPI_CSI_2_RX_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_MIPI_CSI_2_RX_0_0_impl_1">
+    <Run Id="system_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_processing_system7_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_processing_system7_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -704,7 +693,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_MIPI_D_PHY_RX_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_MIPI_D_PHY_RX_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_MIPI_D_PHY_RX_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_MIPI_D_PHY_RX_0_0_impl_1">
+    <Run Id="system_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_xbar_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_xbar_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -721,7 +710,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_video_dynclk_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_video_dynclk_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_video_dynclk_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_video_dynclk_0_impl_1">
+    <Run Id="system_rgb2dvi_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_rgb2dvi_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_rgb2dvi_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rgb2dvi_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -738,7 +727,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_processing_system7_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_processing_system7_0_0_impl_1">
+    <Run Id="system_rst_clk_wiz_0_50M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_rst_clk_wiz_0_50M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_rst_clk_wiz_0_50M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rst_clk_wiz_0_50M_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -755,7 +744,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_auto_pc_2_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_auto_pc_2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_auto_pc_2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_auto_pc_2_impl_1">
+    <Run Id="system_rst_vid_clk_dyn_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_rst_vid_clk_dyn_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_rst_vid_clk_dyn_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_rst_vid_clk_dyn_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -772,7 +761,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_auto_pc_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_auto_pc_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_auto_pc_1_impl_1">
+    <Run Id="system_v_axi4s_vid_out_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_v_axi4s_vid_out_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_v_axi4s_vid_out_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_v_axi4s_vid_out_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -789,7 +778,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_rst_vid_clk_dyn_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_rst_vid_clk_dyn_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_rst_vid_clk_dyn_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_rst_vid_clk_dyn_0_impl_1">
+    <Run Id="system_video_dynclk_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_video_dynclk_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_video_dynclk_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_video_dynclk_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -806,7 +795,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_DVIClocking_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_DVIClocking_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_DVIClocking_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_DVIClocking_1_0_impl_1">
+    <Run Id="system_vtg_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_vtg_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_vtg_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_vtg_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -823,7 +812,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_xbar_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_xbar_0_impl_1">
+    <Run Id="system_MIPI_D_PHY_RX_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_MIPI_D_PHY_RX_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_MIPI_D_PHY_RX_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_MIPI_D_PHY_RX_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -840,7 +829,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_rst_clk_wiz_0_50M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_rst_clk_wiz_0_50M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_rst_clk_wiz_0_50M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_rst_clk_wiz_0_50M_0_impl_1">
+    <Run Id="system_aircanvas_vision_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_aircanvas_vision_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_aircanvas_vision_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_aircanvas_vision_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -857,26 +846,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="system_AXI_GammaCorrection_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_AXI_GammaCorrection_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_AXI_GammaCorrection_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_AXI_GammaCorrection_1_0_impl_1">
+    <Run Id="system_aircanvas_overlay_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_aircanvas_overlay_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_aircanvas_overlay_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/system_aircanvas_overlay_0_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="system_axi_vdma_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="system_axi_vdma_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="system_axi_vdma_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="D:/WorkRaduV/Projects/Zybo-Z7/hw/proj/hw.srcs/utils_1/imports/system_axi_vdma_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

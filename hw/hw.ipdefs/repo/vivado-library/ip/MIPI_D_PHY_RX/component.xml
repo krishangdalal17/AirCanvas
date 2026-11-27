@@ -712,7 +712,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fe6b1fd9</spirit:value>
+            <spirit:value>5f16eb6b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -726,7 +726,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>21ed9dcc</spirit:value>
+            <spirit:value>c803790e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -740,7 +740,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>124f3381</spirit:value>
+            <spirit:value>4de054d7</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -758,7 +758,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2d15464e</spirit:value>
+            <spirit:value>3f708ff6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -776,7 +776,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>5f9a79a8</spirit:value>
+            <spirit:value>4eb57e73</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -791,7 +791,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2edb0c96</spirit:value>
+            <spirit:value>f3e2d38a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -819,7 +819,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f525d471</spirit:value>
+            <spirit:value>15cac246</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2115,23 +2115,26 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/SyncAsync.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:name>hdl/ila_sfen_rxclk/ila_sfen_rxclk.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_GenerateDebug.ILA_SFEN_Gen[1].ILA_SFEN_RxClkX</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/DPHY_Pkg.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:name>hdl/ila_sfen_refclk/ila_sfen_refclk.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_GenerateDebug.ILA_SFEN_Gen[1].ILA_SFEN_RefClkX</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/SyncAsyncReset.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:name>hdl/ila_scnn_refclk/ila_scnn_refclk.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_GenerateDebug.ILA_SCNN_RefClkX</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/DebugLib.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/HS_Deserializer.vhd</spirit:name>
+        <spirit:name>hdl/SyncAsync.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2143,7 +2146,19 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/InputBuffer.vhd</spirit:name>
+        <spirit:name>hdl/DPHY_LaneSCNN.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/SyncAsyncReset.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/DPHY_Pkg.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/HS_Deserializer.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2151,7 +2166,7 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/DPHY_LaneSCNN.vhd</spirit:name>
+        <spirit:name>hdl/InputBuffer.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2159,21 +2174,9 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/ila_sfen_rxclk/ila_sfen_rxclk.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/ila_sfen_refclk/ila_sfen_refclk.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/ila_scnn_refclk/ila_scnn_refclk.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>hdl/MIPI_DPHY_Receiver.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_4dc538a0</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_fdc2d378</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -2189,23 +2192,26 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/SyncAsync.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:name>hdl/ila_sfen_rxclk/ila_sfen_rxclk.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_GenerateDebug.ILA_SFEN_Gen[1].ILA_SFEN_RxClkX</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/DPHY_Pkg.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:name>hdl/ila_sfen_refclk/ila_sfen_refclk.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_GenerateDebug.ILA_SFEN_Gen[1].ILA_SFEN_RefClkX</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/SyncAsyncReset.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:name>hdl/ila_scnn_refclk/ila_scnn_refclk.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_GenerateDebug.ILA_SCNN_RefClkX</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/DebugLib.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/HS_Deserializer.vhd</spirit:name>
+        <spirit:name>hdl/SyncAsync.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2217,7 +2223,19 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/InputBuffer.vhd</spirit:name>
+        <spirit:name>hdl/DPHY_LaneSCNN.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/SyncAsyncReset.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/DPHY_Pkg.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/HS_Deserializer.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2225,7 +2243,7 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/DPHY_LaneSCNN.vhd</spirit:name>
+        <spirit:name>hdl/InputBuffer.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2250,14 +2268,14 @@
     <spirit:fileSet>
       <spirit:name>xilinx_testbench_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>tb/MIPI_DPHY_Receiver_behav.wcfg</spirit:name>
-        <spirit:fileType>unknown</spirit:fileType>
+        <spirit:name>tb/tb_MIPI_DPHY_Receiver.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
         <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>tb/tb_MIPI_DPHY_Receiver.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:name>tb/MIPI_DPHY_Receiver_behav.wcfg</spirit:name>
+        <spirit:fileType>unknown</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
         <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
       </spirit:file>
@@ -2444,14 +2462,18 @@
         <xilinx:taxonomy>/Video_&amp;_Image_Processing</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>MIPI_D_PHY_RX_v1.0</xilinx:displayName>
+      <xilinx:xpmLibraries>
+        <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
+        <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
+      </xilinx:xpmLibraries>
       <xilinx:vendorDisplayName>Digilent, Inc.</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.digilentinc.com</xilinx:vendorURL>
-      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:coreRevision>6</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>digilentinc.com:ip:MIPI_D_PHY_RX:1.0</xilinx:canUpgradeFrom>
         <xilinx:canUpgradeFrom>digilentinc.com:ip:MIPI_D_PHY_RX:1.2</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2020-07-23T11:59:50Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2026-11-26T06:01:56Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="natinst.com:user:MIPI_D_PHY_RX:1.0_ARCHIVE_LOCATION">c:/git/pcam/common-repo/vivado-library/ip/MIPI_D_PHY_RX_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="digilentinc.com:user:MIPI_D_PHY_RX:1.0_ARCHIVE_LOCATION">c:/git/pcam/common-repo/vivado-library/ip/MIPI_D_PHY_RX_1.0</xilinx:tag>
@@ -2465,13 +2487,31 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@59365c21_ARCHIVE_LOCATION">/media/bbardi/Date/Zybo-Z7-20-pcam-5c/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6adfd574_ARCHIVE_LOCATION">/media/bbardi/Date/Zybo-Z7-20-pcam-5c/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@37ef85cf_ARCHIVE_LOCATION">/media/bbardi/Date/Zybo-Z7-20-pcam-5c/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cef5a27_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@784c814f_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6af8a738_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@99d5680_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@398487ae_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42ee4ce_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35f9268f_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d94a8dd_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@139e9348_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@769eedd3_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@440fb5ac_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6bf7586b_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2907e287_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72ff4abc_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c46a19_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@8785bbf_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2db9153e_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65ccb76f_ARCHIVE_LOCATION">c:/Users/krish/Desktop/Lab_Camera/hw/hw.ipdefs/repo/vivado-library/ip/MIPI_D_PHY_RX</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9231af9e"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="a8980953"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="87ebf48b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9acece47"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="2225505a"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="47d69848"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="ccd8f029"/>

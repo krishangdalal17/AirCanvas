@@ -8,9 +8,9 @@
 | `Final_Project/hw_pcam/hw/system_wrapper.xsa` | Hardware-to-software handoff | Vivado/Vitis 2021.1 | Create or refresh software platform | Present |
 | `Final_Project/pcam_hdmi/src/main.cc` | Software | Vitis 2021.1 | Build camera application | Present |
 | `Final_Project/pcam_hdmi/Debug/pcam_hdmi.elf` | Software execution | Vitis/JTAG | Download to PS | Present |
-| `Final Project/Project Collateral/aircanvas/vivado/rtl/*.sv` | Final hardware/IP | Vivado | Add after camera baseline passes | Present; not yet integrated |
-| `Final Project/Project Collateral/aircanvas/vivado/rtl/aircanvas_vision.sv` | First AirCanvas vision block | Vivado 2021.1 | Package/add to the validated camera project | Present; standalone, not yet integrated |
-| `Final Project/Project Collateral/aircanvas/vitis/src/*.c` | Final software | Vitis | Add after XSA/IP interface is stable | Present; not yet integrated |
+| `Final Project/Project_Collateral/aircanvas/vivado/rtl/*.sv` | Final hardware/IP | Vivado | Add after camera baseline passes | Present; not yet integrated |
+| `Final Project/Project_Collateral/aircanvas/vivado/rtl/aircanvas_vision.sv` | First AirCanvas vision block | Vivado 2021.1 | Package/add to the validated camera project | Present; standalone, not yet integrated |
+| `Final Project/Project_Collateral/aircanvas/vitis/src/*.c` | Final software | Vitis | Add after XSA/IP interface is stable | Present; not yet integrated |
 
 ## Naming rule
 
